@@ -1,39 +1,48 @@
 import 'package:flutter/material.dart';
+import '../main.dart'; // Para acessar a SelecaoTipoUsuario
 
 class LoginScreen extends StatelessWidget {
-  final String tipoUsuario; // 'chapa' ou 'empregador'
-
-  LoginScreen({required this.tipoUsuario});
+  const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Login - $tipoUsuario")),
-      body: Padding(
-        padding: EdgeInsets.all(20),
-        child: Column(
-          children: [
-            TextField(
-              decoration: InputDecoration(labelText: "E-mail"),
-            ),
-            TextField(
-              decoration: InputDecoration(labelText: "Senha"),
-              obscureText: true, // Esconde a senha
-            ),
-            SizedBox(height: 30),
-            ElevatedButton(
-              onPressed: () {
-                // Aqui depois vamos colocar a lógica de entrar
-              },
-              child: Text("Entrar"),
-            ),
-            TextButton(
-              onPressed: () {
-                // Aqui vamos levar para a tela de Cadastro que faremos depois
-              },
-              child: Text("Não tem conta? Cadastre-se"),
-            )
-          ],
+      body: Center(
+        child: Container(
+          constraints: const BoxConstraints(maxWidth: 400),
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text("Bem-vindo ao Chama Chapa", 
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+              const SizedBox(height: 40),
+              const TextField(
+                decoration: InputDecoration(labelText: "E-mail", border: OutlineInputBorder()),
+              ),
+              const SizedBox(height: 15),
+              const TextField(
+                obscureText: true,
+                decoration: InputDecoration(labelText: "Senha", border: OutlineInputBorder()),
+              ),
+              const SizedBox(height: 30),
+              ElevatedButton(
+                onPressed: () { /* Lógica de Login */ },
+                style: ElevatedButton.styleFrom(minimumSize: const Size(double.infinity, 50)),
+                child: const Text("ENTRAR"),
+              ),
+              TextButton(
+                onPressed: () {
+                  // Navegação para a tela de escolha (Chapa ou Empresa)
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const SelecaoTipoUsuario()),
+                  );
+                },
+                child: const Text("Não tem conta? Clique aqui para Registrar"),
+              )
+            ],
+          ),
         ),
       ),
     );
