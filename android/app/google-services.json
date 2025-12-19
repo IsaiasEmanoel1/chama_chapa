@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1034676646302",
+    "project_id": "chama-chapa",
+    "storage_bucket": "chama-chapa.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1034676646302:android:08a7d123d6c8ce6334268f",
+        "android_client_info": {
+          "package_name": "com.example.chama_chapa"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBW_CWHk2MaGegqUBa40ZL8vRmKTsdPsGY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
